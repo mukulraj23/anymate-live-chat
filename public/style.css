@@ -1,0 +1,98 @@
+/* public/style.css (Final Golden Copy with Logo) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    padding: 24px;
+    text-align: center;
+}
+
+/* ===== H1 STYLING MEIN BADLAAV HUA HAI ===== */
+h1 { 
+    color: #1c1e21; 
+    margin-top: 0;
+    /* Yeh lines logo aur text ko align karengi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Logo aur text ke beech mein space */
+}
+
+/* ===== YAHAN BADLAAV HUA HAI ===== */
+.logo-img {
+    height: 4em; /* Logo ki height ko text ke size ke barabar karega */
+    transform: translateY(2px); /* Logo ko thoda sa neeche kar dega taaki woh text ke bilkul center mein dikhe */
+}
+
+.hidden { display: none; }
+
+#chat-container { display: flex; flex-direction: column; height: 400px; }
+#status-bar { padding: 8px; background-color: #e7f3ff; border: 1px solid #cce0ff; color: #004085; border-radius: 4px; margin-bottom: 12px; font-size: 0.9em; }
+#status-bar.error { background-color: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+#chat-messages { flex-grow: 1; border: 1px solid #ddd; border-radius: 4px; padding: 12px; overflow-y: auto; margin-bottom: 12px; display: flex; flex-direction: column; gap: 4px; }
+.message { display: inline-block; padding: 8px 12px; border-radius: 12px; line-height: 1.4; max-width: 80%; }
+.message.you { align-self: flex-end; background-color: #007bff; color: white; border-bottom-right-radius: 4px; }
+.message.stranger { align-self: flex-start; background-color: #e9e9eb; color: #333; border-bottom-left-radius: 4px; }
+.sender { font-weight: bold; }
+.message-time { display: block; font-size: 0.7em; color: rgba(0, 0, 0, 0.5); text-align: right; margin-top: 4px; }
+.message.you .message-time { color: rgba(255, 255, 255, 0.7); }
+
+.input-area, .controls-area { display: flex; gap: 8px; }
+.controls-area { margin-top: 10px; }
+#message-input { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+#message-input:disabled { background-color: #f8f9fa; }
+
+button { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background-color 0.2s; }
+button:disabled { cursor: not-allowed; opacity: 0.6; }
+
+#start-btn, #send-btn { background-color: #007bff; color: white; }
+#start-btn:hover, #send-btn:hover:not(:disabled) { background-color: #0056b3; }
+#disconnect-btn { background-color: #6c757d; color: white; }
+#disconnect-btn:hover { background-color: #5a6268; }
+#report-btn { background-color: #dc3545; color: white; }
+#report-btn:hover:not(:disabled) { background-color: #c82333; }
+
+#online-counter-container { margin-top: 15px; color: #555; font-size: 0.9em; }
+#online-count { font-weight: bold; color: #333; }
+.app-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e9e9eb; text-align: center; font-size: 0.8em; }
+.app-footer a { color: #6c757d; text-decoration: none; margin: 0 10px; }
+.app-footer a:hover { text-decoration: underline; }
+
+/* MODAL STYLES */
+#rules-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
+#rules-modal { background-color: #fff; color: #333; padding: 2rem; border-radius: 8px; max-width: 500px; width: 90%; text-align: center; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); animation: slideDown 0.5s ease-out; }
+#rules-modal h2 { margin-bottom: 0.5rem; }
+#rules-modal > p { color: #555; margin-bottom: 1.5rem; }
+.rules-content { text-align: left; margin-bottom: 2rem; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 1rem 0; }
+.rules-content h4 { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; }
+.rules-content i { color: #dc3545; }
+.rules-content p { font-size: 0.9em; line-height: 1.6; color: #666; margin-bottom: 1rem; }
+#agree-btn { width: 100%; padding: 12px; font-size: 1rem; font-weight: bold; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; }
+#agree-btn:hover { background-color: #218838; }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* MOBILE RESPONSIVE STYLES */
+@media (max-width: 600px) {
+  body { padding: 0; align-items: flex-start; }
+  .main-container { width: 100%; height: 100%; border-radius: 0; box-shadow: none; padding: 12px; display: flex; flex-direction: column; }
+  #chat-container { height: 100%; flex-grow: 1; }
+  h1 { font-size: 1.8rem; }
+  .logo-img { height: 30px; } /* Mobile par logo thoda chota */
+  p { font-size: 0.9rem; }
+  #message-input, button { padding: 12px; font-size: 1rem; }
+}
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyMate - Chat with Strangers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="rules-modal-overlay">
+    <!-- ... (Modal ka code waisa hi rahega) ... -->
+    <div id="rules-modal">
+      <h2>Welcome to AnyMate!</h2>
+      <p>Before you begin, please read and agree to the following terms:</p>
+      <div class="rules-content">
+        <h4><i class="fas fa-exclamation-triangle"></i> Age Requirement</h4>
+        <p>By entering this chat, you certify that you are <strong>18 years of age or older</strong>. This service is not intended for minors.</p>
+        <h4><i class="fas fa-gavel"></i> User Conduct & Indian Law</h4>
+        <p>You must be respectful to other users. The use of abusive, hateful, or obscene language is strictly prohibited. Misconduct may result in a permanent ban. Please be aware that your activities may be subject to the laws of India, including the <strong>Information Technology Act, 2000</strong>.</p>
+      </div>
+      <button id="agree-btn">I Understand and Agree</button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    
+    <!-- ===== YAHAN BADLAAV HUA HAI ===== -->
+    <h1>
+      <img src="/logo.png" alt="AnyMate Logo" class="logo-img">
+      AnyMate
+    </h1>
+    <!-- ================================ -->
+
+    <p>Talk to random strangers anonymously!</p>
+
+    <div id="start-screen">
+      <!-- ... (Start screen ka code waisa hi rahega) ... -->
+       <button id="start-btn">Start a New Chat</button>
+      <div id="online-counter-container">
+        Online: <span id="online-count">0</span>
+      </div>
+    </div>
+
+    <div id="chat-container" class="hidden">
+      <!-- ... (Chat container ka code waisa hi rahega) ... -->
+      <div id="status-bar">Connecting...</div>
+      <div id="chat-messages"></div>
+      <div class="input-area">
+        <input type="text" id="message-input" placeholder="Type here..." disabled>
+        <button id="send-btn" disabled>Send</button>
+      </div>
+      <div class="controls-area">
+        <button id="disconnect-btn">Disconnect</button>
+        <button id="report-btn" class="report-btn">Report</button>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+        <!-- ... (Footer ka code waisa hi rahega) ... -->
+        <a href="/privacy.html" target="_blank">Privacy Policy</a>
+        <a href="/terms.html" target="_blank">Terms of Use</a>
+        <a href="/guidelines.html" target="_blank">Community Guidelines</a>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
