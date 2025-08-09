@@ -1,4 +1,4 @@
-// public/client.js (Final Golden Copy with Pop-up Fix)
+
 const socket = io();
 
 // DOM Elements
@@ -48,7 +48,7 @@ function updateStatus(message, isError = false) {
 // UPDATED resetUI function
 function resetUI() {
     chatContainer.classList.add('hidden');
-    // Hum ab yahan se startScreen ko nahi dikhayenge, taaki modal se conflict na ho.
+   
     chatMessages.innerHTML = '';
     messageInput.value = '';
     messageInput.disabled = true;
@@ -91,7 +91,7 @@ disconnectBtn.addEventListener('click', () => { if (isConnected) socket.emit('ma
 agreeBtn.addEventListener('click', () => {
     rulesModalOverlay.style.display = 'none';
     localStorage.setItem('rulesAgreed', 'true');
-    startScreen.classList.remove('hidden'); // Agree karne ke baad hi Start Screen dikhao
+    startScreen.classList.remove('hidden'); 
 });
 
 reportBtn.addEventListener('click', () => {
@@ -134,12 +134,12 @@ socket.on('partnerStoppedTyping', () => { if (isConnected) statusBar.textContent
 document.addEventListener('DOMContentLoaded', () => {
     resetUI();
     
-    // Ab hum yahan se control karenge ki pop-up dikhega ya start screen
+   
     if (localStorage.getItem('rulesAgreed') === 'true') {
         rulesModalOverlay.style.display = 'none';
         startScreen.classList.remove('hidden');
     } else {
         rulesModalOverlay.style.display = 'flex';
-        startScreen.classList.add('hidden'); // Sunishchit karo ki start screen chhipi rahe
+        startScreen.classList.add('hidden'); 
     }
 });
