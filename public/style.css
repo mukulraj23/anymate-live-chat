@@ -1,4 +1,4 @@
-/* public/style.css (Final Golden Copy with Logo) */
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
@@ -20,21 +20,20 @@ body {
     text-align: center;
 }
 
-/* ===== H1 STYLING MEIN BADLAAV HUA HAI ===== */
+
 h1 { 
     color: #1c1e21; 
     margin-top: 0;
-    /* Yeh lines logo aur text ko align karengi */
+   
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Logo aur text ke beech mein space */
-}
+    gap: 10px; 
 
-/* ===== YAHAN BADLAAV HUA HAI ===== */
+
 .logo-img {
-    height: 4em; /* Logo ki height ko text ke size ke barabar karega */
-    transform: translateY(2px); /* Logo ko thoda sa neeche kar dega taaki woh text ke bilkul center mein dikhe */
+    height: 4em; 
+    transform: translateY(2px);
 }
 
 .hidden { display: none; }
@@ -90,7 +89,7 @@ button:disabled { cursor: not-allowed; opacity: 0.6; }
   .main-container { width: 100%; height: 100%; border-radius: 0; box-shadow: none; padding: 12px; display: flex; flex-direction: column; }
   #chat-container { height: 100%; flex-grow: 1; }
   h1 { font-size: 1.8rem; }
-  .logo-img { height: 30px; } /* Mobile par logo thoda chota */
+  .logo-img { height: 30px; } 
   p { font-size: 0.9rem; }
   #message-input, button { padding: 12px; font-size: 1rem; }
 }
